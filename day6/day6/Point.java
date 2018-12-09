@@ -1,20 +1,25 @@
+package day6;
 import java.util.Objects;
 
 public class Point {
     private final int x;
     private final int y;
-    
+
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    
+
     public int getX() {
         return x;
     }
-    
+
     public int getY() {
         return y;
+    }
+
+    public int distanceTo(Point point) {
+        return Math.abs(this.x - point.x) + Math.abs(this.y - point.y);
     }
 
     @Override
@@ -24,7 +29,7 @@ public class Point {
                 ", y=" + y +
                 '}';
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,7 +38,7 @@ public class Point {
         return x == point.x &&
                 y == point.y;
     }
-    
+
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
